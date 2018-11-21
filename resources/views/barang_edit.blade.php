@@ -42,6 +42,10 @@
                     <input type="number" class="form-control" id="usr" name="harga" value="{{$datas-> harga}}">
                 </div>
                 <div class="form-group">
+                    <label for="bahan">Bahan:</label>
+                    <input type="text" class="form-control" id="usr" name="bahan" value="{{$datas-> bahan}}">
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
                     <button type="reset" class="btn btn-md btn-danger">Cancel</button>
                 </div>

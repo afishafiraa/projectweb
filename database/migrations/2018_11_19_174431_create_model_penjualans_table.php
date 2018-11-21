@@ -15,13 +15,10 @@ class CreateModelPenjualansTable extends Migration
     {
         Schema::create('penjualan', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('tgl_jual');
-            $table->integer('harga');
-            $table->string('warna');
-            $table->string('bahan');
-            $table->integer('pemasukan');
-            $table->integer('pengeluaran');
-            $table->integer('total');
+            $table->date('tgl_transaksi');
+            $table->integer('nominal');
+            $table->enum('transaksi',['Pemasukan','Pengeluaran']);
+            $table->string('keperluan');
             $table->timestamps();
         });
     }

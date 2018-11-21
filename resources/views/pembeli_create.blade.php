@@ -22,7 +22,7 @@
             </div>
 
             <div class ="box-body">
-            <form action="{{ route('pembeli.store') }}" method="post">
+            <form action="{{ route('pembeli.store') }}" method="post" encytype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="nama_pembeli">Nama Pembeli:</label>

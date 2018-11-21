@@ -4,32 +4,46 @@
     <section class="main-section">
         <!-- Add Your Content Inside -->
         <div class="content">
+        <section class="content-header">
+            <h1>
+                Data Transaksi
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Data Transaksi</li>
+             </ol>
+        </section>
+        <hr>
             <!-- Remove This Before You Start -->
-            <h1>Edit Pemasukan</h1>
-            <hr>
+            <div class ="box">
+                <div class ="box-header">
+                    <h1 class="box-title">Edit Transaksi</h1>
+                    <hr>
+                </div>
+            
+            <div class = "box-body">
             @foreach($data as $datas)
-            <form action="{{ route('pemasukan.update', $datas->id) }}" method="post">
+            <form action="{{ route('penjualan.update', $datas->id) }}" method="post" encytype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="form-group">
-                    <label for="bahan_jilbab">Bahan jilbab</label>
-                    <input type="text" class="form-control" id="bahan_jilbab" name="bahan_jilbab" value="{{ $datas->bahan_jilbab }}">
-                </div>
-               <div class="form-group">
-                    <label for="warna_jilbab">Warna Jilbab:</label>
-                     <input type="text" class="form-control" id="warna_jilbab" name="warna_jilbab" value="{{ $datas->warna_jilbab }}">
+                    <label for="tgl_transaksi">Tanggal Transaksi:</label>
+                    <input type="date" class="form-control" id="tgl_transaksi" name="tgl_transaksi" value="{{$datas-> tgl_transaksi}}">
                 </div>
                 <div class="form-group">
-                    <label for="harga_jilbab">Harga Jilbab:</label>
-                     <input type="number" class="form-control" id="harga_jilbab" name="harga_jilbab" value="{{ $datas->harga_jilbab }}">
+                    <label for="nominal">Nominal:</label>
+                    <input type="number" class="form-control" id="nominal" name="nominal" value="{{$datas-> nominal}}">
                 </div>
-				 <div class="form-group">
-                    <label for="tgl_beli">Tanggal beli</label>
-                    <input type="date" class="form-control" id="tgl_beli" name="tgl_beli" value="{{ $datas->tgl_beli }}">
+				<div class="form-group">
+                    <label for="transaksi">Transaksi:</label>
+                    <select name="transaksi">
+                        <option value="pemasukan">Pemasukan</option>
+                        <option value="pengeluaran">Pengeluaran</option>
+                    </select>
                 </div>
-				 <div class="form-group">
-                    <label for="id_supplier">Id Supplier</label>
-                    <input type="text" class="form-control" id="id_supplier" name="id_supplier" value="{{ $datas->id_supplier }}">
+				  <div class="form-group">
+                    <label for="keperluan">Keterangan:</label>
+                    <input type="text" class="form-control" id="keperluan" name="keperluan" value="{{$datas-> keperluan}}">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-primary">Submit</button>
@@ -38,6 +52,8 @@
             </form>
             @endforeach
         </div>
+    </div>
+    </div>
         <!-- /.content -->
     </section>
     <!-- /.main-section -->

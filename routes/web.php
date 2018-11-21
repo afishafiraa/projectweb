@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
 Route::get('/form', function () {
@@ -20,6 +20,10 @@ Route::get('/form', function () {
 
 Route::get('/index', function () {
     return view('index');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 //Route::resource('mahasiswa','Mahasiswa');

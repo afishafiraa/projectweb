@@ -8,14 +8,18 @@
         Data Pembeli
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Data Pembeli</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-
+    @if(Session::has('alert-success'))
+                <div class="alert alert-success">
+                    <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
+                </div>
+            @endif
     <div class="container">
     <table class="table table-striped">
                 <thead>
@@ -27,6 +31,7 @@
                     <th>Warna</th>
                     <th>Bahan</th>
                     <th>Harga</th>
+                    <th>Total</th>
                     <th colspan="2">Action</th>
                 </tr>
                 </thead>
@@ -41,6 +46,7 @@
                         <td>{{ $d->warna }}</td>
                         <td>{{ $d->bahan }}</td>
                         <td>{{ $d->harga }}</td>
+                        <td>{{ $d->total }}</td>
                         <td>
                             <form action="{{ route('pembeli.destroy', $d->id) }}" method="post">
                                 {{ csrf_field() }}

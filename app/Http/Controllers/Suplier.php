@@ -14,8 +14,8 @@ class Suplier extends Controller
      */
     public function index()
     {
-        $data = ModelPembeli::all();
-		return view('pembeli',compact('data'));
+        $data = ModelSuplier::all();
+		return view('suplier',compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class Suplier extends Controller
      */
     public function create()
     {
-        //
+        return view('suppliers_create');
     }
 
     /**
@@ -36,7 +36,17 @@ class Suplier extends Controller
      */
     public function store(Request $request)
     {
-        return view ('suppliers_create');
+        $data = new ModelSuplier();
+        $data->nama_suplier = $request->nama_suplier;
+        $data->alamat = $request->alamat;
+        $data->nohp = $request->nohp;
+        $data->warna = $request->warna;
+        $data->harga = $request->harga;
+        $data->bahan = $request->bahan;
+        $data->jumlah_barang = $request->jumlah_barang;
+        // $data->total = $data->pemasukan - $data->pengeluaran;
+        $data->save();
+            return redirect()->route('suplier.index')->with('alert-success','Berhasil Menambahkan Data!');
     }
 
     /**
@@ -58,7 +68,7 @@ class Suplier extends Controller
      */
     public function edit($id)
     {
-        $data = modelSupplier::where('id',$id)->get();
+        $data = modelSuplier::where('id',$id)->get();
 		return view ('suppliers_edit',compact('data'));
     }
 
@@ -71,7 +81,17 @@ class Suplier extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = ModelSuplier::where('id',$id)->first();
+        $data->nama_suplier = $request->nama_suplier;
+        $data->alamat = $request->alamat;
+        $data->nohp = $request->nohp;
+        $data->warna = $request->warna;
+        $data->harga = $request->harga;
+        $data->bahan = $request->bahan;
+        $data->jumlah_barang = $request->jumlah_barang;
+		$data->save();
+		    return redirect()->route('suplier.index')->with(
+		 'alert-success','Data Berhasil diubah');
     }
 
     /**
@@ -82,6 +102,8 @@ class Suplier extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = ModelSuplier::where('id',$id)->first();
+		$data->delete();
+		return redirect()->route('suplier.index')->with('alert-success','Data berhasil dihapus!');
     }
 }

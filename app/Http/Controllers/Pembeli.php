@@ -37,13 +37,13 @@ class Pembeli extends Controller
     public function store(Request $request)
     {
         $data = new ModelPembeli();
-        $data->id = $request->id;
         $data->nama_pembeli = $request->nama_pembeli;
         $data->alamat = $request->alamat;
         $data->jumlah_barang = $request->jumlah_barang;
         $data->warna = $request->warna;
         $data->bahan = $request->bahan;
         $data->harga = $request->harga;
+        $data->total = $data->jumlah_barang*$data->harga;
         $data->save();
             return redirect()->route('pembeli.index')->with('alert-success','Berhasil Menambahkan Data!');
     }
@@ -100,6 +100,8 @@ class Pembeli extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = ModelPembeli::where('id',$id)->first();
+		$data->delete();
+		return redirect()->route('pembeli.index')->with('alert-success','Data berhasil dihapus!');
     }
 }

@@ -19,6 +19,7 @@ class CreateModelBarangsTable extends Migration
             $table->integer('stok');
             $table->string('warna');
             $table->integer('harga');
+            $table->string('bahan');
             $table->timestamps();
         });
     }

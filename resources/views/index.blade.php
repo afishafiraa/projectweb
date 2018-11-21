@@ -42,7 +42,7 @@
 <div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
-    <a href="/index" class="logo">
+    <a href="/dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>Ph</span>
       <!-- logo for regular state and mobile devices -->
@@ -51,7 +51,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="/index" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <a href="/dashboard" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
 
@@ -291,7 +291,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -341,9 +341,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/penjualan"><i class="fa fa-circle-o"></i> Data </a></li>
-          </ul>
-          <ul class="treeview-menu">
-            <li><a href="/penjualan"><i class="fa fa-circle-o"></i> Tambah Data </a></li>
+            <li><a href="/penjualan/create"><i class="fa fa-circle-o"></i> Tambah Data </a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -366,23 +364,19 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/pembeli"><i class="fa fa-circle-o"></i> Data </a></li>
-          </ul>
-          <ul class="treeview-menu">
             <li><a href="/pembeli/create"><i class="fa fa-circle-o"></i> Tambah Pembeli </a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-files-o"></i> <span>Suplier</span>
+            <i class="fa fa-files-o"></i> <span>Supplier</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="/suplier"><i class="fa fa-circle-o"></i> Data</a></li>
-          </ul>
-          <ul class="treeview-menu">
-            <li><a href="/suplier/create"><i class="fa fa-circle-o"></i> Tambah Suplier</a></li>
+            <li><a href="/suplier/create"><i class="fa fa-circle-o"></i> Tambah Supplier</a></li>
           </ul>
         </li>
       </ul>

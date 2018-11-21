@@ -41,6 +41,7 @@ class Barang extends Controller
         $data->stok = $request->stok;
         $data->warna = $request->warna;
         $data->harga = $request->harga;
+        $data->bahan = $request->bahan;
         $data->save();
             return redirect()->route('barang.index')->with('alert-success','Berhasil Menambahkan Data!');
     }
@@ -82,6 +83,7 @@ class Barang extends Controller
         $data->stok = $request->stok;
         $data->warna = $request->warna;
         $data->harga = $request->harga;
+        $data->bahan = $request->bahan;
         $data -> save();
         return redirect()->route('barang.index')->with(
             'alert-success','Data Berhasil diubah'

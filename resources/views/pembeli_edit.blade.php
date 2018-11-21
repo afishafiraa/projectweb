@@ -17,13 +17,13 @@
         <hr>
         <div class="box">
             <div class="box-header">
-                <h1 class="box-title">Edit Barang</h1>
+                <h1 class="box-title">Edit Pembeli</h1>
                 <hr>
             </div>
 
             <div class="box-body">
             @foreach($data as $datas)
-            <form action="{{ route('pembeli.update', $datas->id) }}" method="post">
+            <form action="{{ route('pembeli.update', $datas->id) }}" method="post" encytype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="form-group">

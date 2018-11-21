@@ -8,15 +8,21 @@
         Data Barang
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Data Barang</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
+    
+    @if(Session::has('alert-success'))
+        <div class="alert alert-success">
+            <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
+        </div>
+    @endif
 
-    <a style="float:right;padding:10px;" href="{{ route('barang.create') }}" class=" btn btn-sm btn-primary" >Tambah</a>  
+    <a style="float:right;padding:10px;" href="{{ route('barang.create') }}" class=" btn btn-sm btn-primary" >Tambah</a>
     <div class="container">
     
     <table class="table table-striped">
@@ -27,6 +33,7 @@
         <th>Harga</th>
         <th>Warna</th>
         <th>Stok</th>
+        <th>Bahan</th>
         <th colspan="2">Action</th>
       </tr>
     </thead>
@@ -39,6 +46,7 @@
         <td>{{$post->harga}}</td>
         <td>{{$post->warna}}</td>
         <td>{{$post->stok}}</td>
+        <td>{{$post->bahan}}</td>
         <td>
             <form action="{{ route('barang.destroy', $post->id) }}" method="post">
                 {{ csrf_field() }}

@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Suplier
+        Data Supplier
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -15,7 +15,6 @@
 
     <!-- Main content -->
     <section class="content">
-    <h1>Data Supplier</h1>
             @if(Session::has('alert-success'))
                 <div class="alert alert-success">
                     <strong>{{ \Illuminate\Support\Facades\Session::get('alert-success') }}</strong>
@@ -26,7 +25,7 @@
                 <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Suplier</th>
+                    <th>Nama Supplier</th>
                     <th>Alamat</th>
                     <th>No HP</th>
                     <th>Warna Jilbab</th>
@@ -60,15 +59,6 @@
                 @endforeach
                 </tbody>
             </table>
-
-
-
-
-
-
-
-
-
     <!-- End Section before end -->
     </section>
     <!-- /.content -->

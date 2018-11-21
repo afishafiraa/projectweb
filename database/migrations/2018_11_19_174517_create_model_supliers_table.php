@@ -17,7 +17,7 @@ class CreateModelSupliersTable extends Migration
             $table->increments('id');
             $table->string('nama_suplier');
             $table->text('alamat');
-            $table->integer('nohp');
+            $table->string('nohp');
             $table->string('warna');
             $table->integer('harga');
             $table->string('bahan');

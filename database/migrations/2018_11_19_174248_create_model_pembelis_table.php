@@ -21,6 +21,7 @@ class CreateModelPembelisTable extends Migration
             $table->string('warna');
             $table->string('bahan');
             $table->integer('harga');
+            $table->integer('total');
             $table->timestamps();
         });
     }
